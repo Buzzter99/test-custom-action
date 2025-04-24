@@ -7,6 +7,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run custom action
         id: hello
-        uses: ./.github/hello-action
+        uses: ./custom-js-action
         with:
           name: "GitHub Actions"
