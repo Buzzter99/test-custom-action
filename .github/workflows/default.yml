@@ -1,0 +1,12 @@
+name: Example Workflow
+on: [workflow_dispatch]
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run custom action
+        id: hello
+        uses: ./.github/hello-action
+        with:
+          name: "GitHub Actions"

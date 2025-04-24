@@ -1,0 +1,10 @@
+name: "Hello World Node.js Action"
+description: "test"
+inputs:
+  name:
+    description: "Who to greet"
+    required: true
+    default: "World"
+runs:
+  using: "node20"
+  main: "action.js"
