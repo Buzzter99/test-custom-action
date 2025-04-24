@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Set up Node.js
+        run: cd ./.github/hello-action && npm install
       - name: Run custom action
         id: hello
         uses: ./.github/hello-action
