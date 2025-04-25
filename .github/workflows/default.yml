@@ -12,3 +12,6 @@ jobs:
         uses: ./.github/hello-action
         with:
           name: "GitHub Actions"
+      - run: |
+         echo $TEST
+         echo ${{ env.TEST }}
