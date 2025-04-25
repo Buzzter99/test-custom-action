@@ -13,5 +13,4 @@ jobs:
         with:
           name: "GitHub Actions"
       - run: |
-         echo "$TEST"
          echo ${{ vars.TEST }}
