@@ -14,3 +14,8 @@ jobs:
           name: "GitHub Actions"
       - run: |
          echo ${{ vars.TEST }}
+      - uses: hashicorp/setup-terraform@v3
+        name: Setup Terraform
+        with:
+          terraform_version: "1.1.7"
+      - run: terraform --version
