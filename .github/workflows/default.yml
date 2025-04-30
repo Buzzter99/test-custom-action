@@ -23,7 +23,7 @@ jobs:
         with:
           name: "GitHub Actions"
       - run: |
-          echo ${{ vars.SOME_VAR }}
+          echo ${{ vars.environment.SOME_VAR }}
       - uses: hashicorp/setup-terraform@v3
         name: Setup Terraform
         with:
