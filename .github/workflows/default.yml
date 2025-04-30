@@ -1,11 +1,15 @@
 name: Example Workflow
-on: [workflow_dispatch]
-inputs:
-  environment:
-    required: true
-    type: string
-    description: "Environment to deploy to"
-env: ${{ inputs.environment }}
+on:  
+  workflow_dispatch:
+   inputs:
+      Environment:
+        required: true
+        type: choice
+        options:
+         - dev
+         - test
+env: 
+  environment: ${{ inputs.Environment }}
 jobs:
   hello-world:
     runs-on: ubuntu-latest
