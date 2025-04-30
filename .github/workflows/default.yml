@@ -1,5 +1,11 @@
 name: Example Workflow
 on: [workflow_dispatch]
+inputs:
+  environment:
+    required: true
+    type: string
+    description: "Environment to deploy to"
+env: ${{ inputs.environment }}
 jobs:
   hello-world:
     runs-on: ubuntu-latest
@@ -13,7 +19,7 @@ jobs:
         with:
           name: "GitHub Actions"
       - run: |
-         echo ${{ vars.TEST }}
+          echo ${{ vars.SOME_VAR }}
       - uses: hashicorp/setup-terraform@v3
         name: Setup Terraform
         with:
