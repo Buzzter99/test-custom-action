@@ -1,0 +1,20 @@
+name: Setup Terraform Action
+runs:
+  using: "composite"
+  steps:
+    - uses: hashicorp/setup-terraform@v3
+      name: Setup Terraform
+      with:
+        terraform_version: "1.1.7"
+    - run: terraform --version
+      shell: bash
+    - name: Azure Login action
+      uses: azure/login@v2
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: Azure CLI script
+      uses: azure/cli@v2
+      with:
+        azcliversion: latest
+        inlineScript: |
+          az group list
