@@ -22,4 +22,5 @@ jobs:
         with:
           name: "GitHub Actions"
       - uses: ./.github/actions/setup-terraform-action
-      
+        with:
+          Azure_Credentials: ${{secrets.AZURE_CREDENTIALS}}

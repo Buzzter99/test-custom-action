@@ -1,4 +1,8 @@
 name: Setup Terraform Action
+inputs:
+  Azure_Credentials:
+    required: true
+    type: secret
 runs:
   using: "composite"
   steps:
@@ -11,7 +15,7 @@ runs:
     - name: Azure Login action
       uses: azure/login@v2
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        creds: ${{ inputs.Azure_Credentials }}
     - name: Azure CLI script
       uses: azure/cli@v2
       with:
