@@ -26,7 +26,7 @@ jobs:
           Azure_Credentials: ${{secrets.AZURE_CREDENTIALS}}
       - name: See current working directory
         run:  | 
+          ls -a
           cd $GITHUB_WORKSPACE
           ls -a
-          echo $GITHUB_REF
         shell: bash
