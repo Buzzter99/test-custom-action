@@ -25,4 +25,7 @@ jobs:
         with:
           Azure_Credentials: ${{secrets.AZURE_CREDENTIALS}}
       - name: See current working directory
-        run: echo $GITHUB_WORKSPACE
+        run:  | 
+          echo $GITHUB_WORKSPACE
+          ls $GITHUB_WORKSPACE
+          echo $GITHUB_REF
