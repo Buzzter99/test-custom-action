@@ -14,6 +14,10 @@ jobs:
     environment: ${{inputs.Environment}}
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
       - name: Set up Node.js
         run: cd ./.github/hello-action && npm install
       - name: Run custom action
