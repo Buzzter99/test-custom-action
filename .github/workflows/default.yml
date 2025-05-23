@@ -37,4 +37,5 @@ jobs:
           ls -a
           cd $GITHUB_WORKSPACE
           ls -a
+          gh repo list
         shell: bash
