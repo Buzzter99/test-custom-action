@@ -17,27 +17,31 @@ jobs:
     environment: ${{inputs.Environment}}
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
-          cache-dependency-path: './.github/hello-action'
-      - name: Set up Node.js
-        run: cd ./.github/hello-action && npm install
-      - name: Run custom action
-        id: hello
-        uses: ./.github/hello-action
-        with:
-          name: "GitHub Actions"
-      - uses: ./.github/actions/setup-terraform-action
-        with:
-          Azure_Credentials: ${{secrets.AZURE_CREDENTIALS}}
+      # - uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 20
+      #     cache: 'npm'
+      #     cache-dependency-path: './.github/hello-action'
+      # - name: Set up Node.js
+      #   run: cd ./.github/hello-action && npm install
+      # - name: Run custom action
+      #   id: hello
+      #   uses: ./.github/hello-action
+      #   with:
+      #     name: "GitHub Actions"
+      # - uses: ./.github/actions/setup-terraform-action
+      #   with:
+      #     Azure_Credentials: ${{secrets.AZURE_CREDENTIALS}}
       - name: See current working directory
         run:  | 
           ls -a
           cd $GITHUB_WORKSPACE
           ls -a
           gh repo list
-        env: 
-          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        shell: bash
+          SomeSecret=$(echo "test" | base64)
+          echo $SomeSecret
+          echo ::add-mask::$SomeSecret
+      #   env: 
+      #     GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      #   shell: bash
+        
