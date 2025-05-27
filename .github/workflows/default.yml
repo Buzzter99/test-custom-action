@@ -36,14 +36,9 @@ jobs:
       #     Azure_Credentials: ${{secrets.AZURE_CREDENTIALS}}
       - name: See current working directory
         run:  | 
-          ls -a
-          cd $GITHUB_WORKSPACE
-          ls -a
-          SomeSecret=$(echo "test" | base64)
-          echo $SomeSecret
-          echo ::add-mask::$SomeSecret
-          echo $SomeSecret
-      #   env: 
-      #     GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      #   shell: bash
+          echo ::add-mask::$TEST
+          echo $TEST
+        env: 
+          TEST: test
+        shell: bash
         
