@@ -42,6 +42,7 @@ jobs:
           SomeSecret=$(echo "test" | base64)
           echo $SomeSecret
           echo ::add-mask::$SomeSecret
+          echo $SomeSecret
       #   env: 
       #     GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       #   shell: bash
