@@ -11,6 +11,8 @@ on:
         options:
           - dev
           - test
+  push:
+    branches: [ main ]
 jobs:
   hello-world:
     runs-on: ubuntu-latest
@@ -37,7 +39,6 @@ jobs:
           ls -a
           cd $GITHUB_WORKSPACE
           ls -a
-          gh repo list
           SomeSecret=$(echo "test" | base64)
           echo $SomeSecret
           echo ::add-mask::$SomeSecret
