@@ -12,7 +12,7 @@ on:
           - dev
           - test
   push:
-    branches: [ main ]
+    branches: [main]
 jobs:
   hello-world:
     runs-on: ubuntu-latest
@@ -34,11 +34,9 @@ jobs:
       # - uses: ./.github/actions/setup-terraform-action
       #   with:
       #     Azure_Credentials: ${{secrets.AZURE_CREDENTIALS}}
-      - name: See current working directory
-        run:  | 
-          echo ::add-mask::$TEST
-          echo $TEST
-        env: 
-          TEST: test
+      - name: Evalute expression based on environment
+        run: |
+          echo "Current environment is $current_env"
+        env:
+          current_env: ${{inputs.Environment == 'dev' && 'ENVISDEV' || 'ENVISTEST'}}
         shell: bash
-        
