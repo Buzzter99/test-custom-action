@@ -14,7 +14,7 @@ on:
 
 jobs:
   hello-world:
-    runs-on: ${{'self-hosted' || 'ubuntu-latest'}}
+    runs-on: ${{'ubuntu-latest'}}
     environment: ${{inputs.Environment}}
     # if: startsWith(github.head_ref, 'feature/')
     steps:
