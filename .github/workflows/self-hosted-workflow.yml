@@ -11,7 +11,10 @@ on:
         options:
           - dev
           - test
-          - feature/*
+      Branch:
+        required: true
+        type: string
+        
 jobs:
   hello-world:
     runs-on: ${{'self-hosted' || 'ubuntu-latest'}}
