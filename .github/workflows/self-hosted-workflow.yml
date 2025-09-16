@@ -21,6 +21,6 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v3
       - name: show aws cli version
-        run:  aws --version && echo ${{github.head_ref}}
+        run:  aws --version && echo ${{github.ref_name}}
         shell: bash
       
