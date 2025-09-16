@@ -11,9 +11,6 @@ on:
         options:
           - dev
           - test
-      Branch:
-        required: true
-        type: string
         
 jobs:
   hello-world:
