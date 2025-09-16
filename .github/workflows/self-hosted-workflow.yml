@@ -16,7 +16,7 @@ jobs:
   hello-world:
     runs-on: ${{'ubuntu-latest'}}
     environment: ${{inputs.Environment}}
-    # if: startsWith(github.head_ref, 'feature/')
+    if: startsWith(github.ref_name, 'feature/')
     steps:
       - name: checkout code
         uses: actions/checkout@v3
