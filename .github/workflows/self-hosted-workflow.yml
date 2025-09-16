@@ -11,6 +11,7 @@ on:
         options:
           - dev
           - test
+          - feature/*
 jobs:
   hello-world:
     runs-on: ${{'self-hosted' || 'ubuntu-latest'}}
